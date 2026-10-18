@@ -7,14 +7,12 @@ import ro.frit.library.model.LoanResult;
 
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 public class Library {
 
   private final Map<String, Book> books = new LinkedHashMap<>();
   private final List<Loan> loans = new ArrayList<>();
-  private final AtomicLong nextLoanId = new AtomicLong(1);
 
   public Library(List<Book> initialBooks) {
     initialBooks.forEach(book -> books.put(book.getId(), book));
@@ -46,7 +44,7 @@ public class Library {
   }
 
   public List<Book> allBooks() {
-    return List.copyOf(books.values());
+    return books.values().stream().toList();
   }
 
   public Optional<Book> findBook(String id) {

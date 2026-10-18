@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+library:
+  seed-books:
+    - id: dune
+      title: Dune
+      author: Frank Herbert
+      copies: 3
+    - id: hobbit
+      title: The Hobbit
+      author: J.R.R. Tolkien
+      copies: 1
